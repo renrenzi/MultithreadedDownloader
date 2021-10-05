@@ -2,7 +2,6 @@ package com.jj.util;
 
 import java.io.IOException;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 
 /**
@@ -10,7 +9,7 @@ import java.net.URL;
  * @author 张俊杰
  * @date 2021/10/5  - {TIME}
  */
-public class HttpUtil {
+public class HttpUtils {
 
     /**
      * 获取 HttpURLConnection 对象
@@ -25,6 +24,11 @@ public class HttpUtil {
         return httpURLConnection;
     }
 
+    /**
+     * 获取文件名
+     * @param url
+     * @return
+     */
     public static String getFileName(String url){
         int index = url.lastIndexOf("/");
         return url.substring(index+1);

@@ -1,6 +1,7 @@
 package com.jj;
 
-import com.jj.util.HttpUtil;
+import com.jj.core.DownLoader;
+import com.jj.util.LogUtils;
 
 import java.util.Scanner;
 
@@ -13,7 +14,7 @@ public class Main {
         String url = null;
         if (args.length == 0 || args == null){
             while (true){
-                System.out.println("请输入下载连接");
+                LogUtils.info("请输入下载连接");
                 Scanner scanner = new Scanner(System.in);
                 url = scanner.next();
                 if (url != null) {
@@ -23,7 +24,6 @@ public class Main {
         }else {
             url = args[0];
         }
-
-        System.out.println(HttpUtil.getFileName(url));
+      new DownLoader().downLoadFile(url);
     }
 }
