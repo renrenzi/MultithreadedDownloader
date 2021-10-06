@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LeetcodeEditor">
+    <option name="projectConfig">
+      <map>
+        <entry key="$PROJECT_DIR$/../../数据结构与算法/code/leetcode/editor/cn/[200]岛屿数量.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/../../数据结构与算法/code/leetcode/editor/cn/doc/content/[200]岛屿数量.md" />
+              <option name="path" value="$PROJECT_DIR$/../../数据结构与算法/code/leetcode/editor/cn/[200]岛屿数量.java" />
+              <option name="questionId" value="200" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

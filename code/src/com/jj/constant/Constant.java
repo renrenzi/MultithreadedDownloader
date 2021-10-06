@@ -13,4 +13,7 @@ public class Constant {
 
     public static final int BYTE_SIZE = 1024 * 100;
 
+    public static final int THREAD_NUM = 5;
+
+    public static final String TEMP_NAME = ".temp";
 }

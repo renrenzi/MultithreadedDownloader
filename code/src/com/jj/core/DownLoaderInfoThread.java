@@ -2,6 +2,8 @@ package com.jj.core;
 
 import com.jj.constant.Constant;
 
+import java.util.concurrent.atomic.LongAdder;
+
 /**
  * 展示下载信息
  * @author 张俊杰
@@ -17,12 +19,12 @@ public class DownLoaderInfoThread implements Runnable {
     /**
      * 本地已下载大小
      */
-    public double finishedSize;
+    public static LongAdder finishedSize = new LongAdder();
 
     /**
      *  本次累积下载大小
      */
-    public double downSize;
+    public volatile static LongAdder downSize = new LongAdder();
 
     /**
      *  前一次累积下载大小
@@ -39,19 +41,19 @@ public class DownLoaderInfoThread implements Runnable {
         String fileSize = String.format("%.2f",httpFileContentLength / Constant.MB);
 
         //计算每秒下载速度 kb
-        int downLoadSpeed = (int) ((downSize - preSize) / 1024d);
-        preSize = downSize;
+        int downLoadSpeed = (int) ((downSize.doubleValue() - preSize) / 1024d);
+        preSize = downSize.doubleValue();
 
         //剩余文件的大小
-        double remainSize = httpFileContentLength - finishedSize - downSize;
+        double remainSize = httpFileContentLength - finishedSize.doubleValue() - downSize.doubleValue();
 
         //计算剩余时间
         String remainTime = String.format("%.1f", remainSize / 1024d / downLoadSpeed);
-        if ("identity".equalsIgnoreCase(remainTime)){
+        if ("Infinitys".equalsIgnoreCase(remainTime)){
             remainTime = "---";
         }
         //已下载大小
-        String correntSize = String.format("%.2f", (downSize - finishedSize) / Constant.MB);
+        String correntSize = String.format("%.2f", (downSize.doubleValue() - finishedSize.doubleValue()) / Constant.MB);
 
         String downInfo = String.format("已下载 %smb/%smb, 下载速度 %skb/s , 剩余时间 %ss",
                                         correntSize, fileSize, downLoadSpeed, remainTime);

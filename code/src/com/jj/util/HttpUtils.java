@@ -12,6 +12,46 @@ import java.net.URL;
 public class HttpUtils {
 
     /**
+     * 获取下载文件大小
+     * @param url
+     * @return
+     * @throws IOException
+     */
+    public static long getHttpFileContentLength(String url) throws IOException {
+       long contentLength;
+       HttpURLConnection httpURLConnection = null;
+        try {
+            httpURLConnection = getHttpURLConnection(url);
+            contentLength = httpURLConnection.getContentLength();
+        } finally {
+            httpURLConnection.disconnect();
+        }
+        return contentLength;
+    }
+
+    /**
+     * 分块下载
+     * @param url
+     * @param startPos
+     * @param endPos
+     * @return
+     * @throws IOException
+     */
+    public static HttpURLConnection getHttpURLConnection(String url,long startPos,long endPos) throws IOException{
+
+        HttpURLConnection httpURLConnection = getHttpURLConnection(url);
+
+        LogUtils.info("下载的区间是 () ---> ()",startPos,endPos);
+
+        if (endPos != 0){
+            httpURLConnection.setRequestProperty("RANGE","bytes=" +startPos +"-" +endPos);
+        }else {
+            httpURLConnection.setRequestProperty("RANGE","bytes=" +startPos +"-");
+        }
+        return httpURLConnection;
+    }
+
+    /**
      * 获取 HttpURLConnection 对象
      * @param url
      * @return
