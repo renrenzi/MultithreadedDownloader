@@ -13,7 +13,7 @@ public class Main {
     public static void main(String[] args) {
         String url = null;
         if (args.length == 0 || args == null){
-            while (true){
+            while (true ){
                 LogUtils.info("请输入下载连接");
                 Scanner scanner = new Scanner(System.in);
                 url = scanner.next();

@@ -49,7 +49,7 @@ public class DownLoaderInfoThread implements Runnable {
 
         //计算剩余时间
         String remainTime = String.format("%.1f", remainSize / 1024d / downLoadSpeed);
-        if ("Infinitys".equalsIgnoreCase(remainTime)){
+        if ("Infinity".equalsIgnoreCase(remainTime)){
             remainTime = "---";
         }
         //已下载大小
