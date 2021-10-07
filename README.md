@@ -3,7 +3,7 @@
 # 控制台演示图
   <img src="https://github.com/Zinner2/MultithreadedDownloader/blob/master/code/src/com/jj/img/01.png" />  
 
-# 1.core (核心模块)      
+# 1.core (核心模块) (https://github.com/Zinner2/MultithreadedDownloader/tree/master/code/src/com/jj/core)    
 
     // 文件下载
     public void downLoadFile(String url)
