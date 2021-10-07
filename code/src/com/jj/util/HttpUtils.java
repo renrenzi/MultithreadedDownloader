@@ -5,7 +5,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 /**
- *  http 工具类
+ *  http连接 工具类
  * @author 张俊杰
  * @date 2021/10/5  - {TIME}
  */

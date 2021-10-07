@@ -3,7 +3,7 @@ package com.jj.util;
 import java.io.File;
 
 /**
- *  文件工具类
+ *  本地文件工具类
  * @author 张俊杰
  * @date 2021/10/5  - {TIME}
  */

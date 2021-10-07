@@ -12,7 +12,6 @@ import java.util.concurrent.*;
 
 /**
  * 实现下载
- *
  * @author 张俊杰
  * @date 2021/10/5  - {TIME}
  */
@@ -25,6 +24,11 @@ public class DownLoader {
 
     private CountDownLatch countDownLatch = new CountDownLatch(Constant.THREAD_NUM);
 
+
+    /**
+     * 文件下载
+     * @param url
+     */
     public void downLoadFile(String url) {
 
         // 获取文件名
@@ -170,4 +174,5 @@ public class DownLoader {
             file.delete();
         }
     }
+
 }
