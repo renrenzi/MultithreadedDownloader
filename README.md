@@ -3,7 +3,7 @@
 # 控制台演示图
   <img src="https://github.com/Zinner2/MultithreadedDownloader/blob/master/code/src/com/jj/img/01.png" />  
 
-# 1.core (核心模块) (https://github.com/Zinner2/MultithreadedDownloader/tree/master/code/src/com/jj/core)    
+# <a href="https://github.com/Zinner2/MultithreadedDownloader/tree/master/code/src/com/jj/core"/>  1.core (核心模块) </a>
 
     // 文件下载
     public void downLoadFile(String url)
@@ -16,7 +16,7 @@
     
     // 清除临时文件
     public void cleanTemp(String fileName)
-# 2.util (工具模块)
+# <a href="https://github.com/Zinner2/MultithreadedDownloader/tree/master/code/src/com/jj/util"/>2.util (工具模块) </a>
    
     // 本地文件工具类
     public class FileUtils 
@@ -26,7 +26,7 @@
     
     // 日志工具类
     public class LogUtils 
-# 3.constant (常量模块)
+# <a href="https://github.com/Zinner2/MultithreadedDownloader/tree/master/code/src/com/jj/constant"/>3.constant (常量模块) </a>
    
     // 常量类
     public class Constant
